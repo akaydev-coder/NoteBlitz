@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NoteBlitz"
         mc:Ignorable="d"
-        Title="NoteBlitz" Height="0" Width="0" WindowStartupLocation="Manual" Icon="/res/icon.ico" Topmost="True" Style="{DynamicResource CustomWindowStyle}" Background="#dd000000">
+        Title="NoteBlitz" Height="0" Width="0" WindowStartupLocation="Manual" Icon="/res/icon.ico" Topmost="True" Style="{DynamicResource CustomWindowStyle}" Background="#dd000000" Opacity="0.75" WindowStyle="None" AllowsTransparency="True">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
         <local:InvertableBooleanToVisibilityConverter x:Key="InverseBoolToVis" />
@@ -13,8 +13,8 @@
     
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem x:Name="miSettings" Header="Settings" Click="miSettings_Click"/>
-            <MenuItem x:Name="miQuit" Header="Quit" Click="miQuit_Click"/>
+            <MenuItem x:Name="miSettings" Header="Einstellungen" Click="miSettings_Click"/>
+            <MenuItem x:Name="miQuit" Header="Beenden" Click="miQuit_Click"/>
         </Menu>
 
         <Grid>
@@ -27,7 +27,7 @@
                 <ListBox x:Name="lbFiles" SelectionMode="Single" BorderThickness="0">
                     <ListBox.ContextMenu>
                         <ContextMenu>
-                            <MenuItem x:Name="miNewFile" Header="New file" Click="miNewFile_Click" Height="30"/>
+                            <MenuItem x:Name="miNewFile" Header="Neue Datei" Click="miNewFile_Click" Height="30"/>
                         </ContextMenu>
                     </ListBox.ContextMenu>
 
@@ -37,8 +37,8 @@
                                 <StackPanel Orientation="Horizontal" Height="30" Background="#01000000" >
                                 <StackPanel.ContextMenu>
                                     <ContextMenu>
-                                        <MenuItem x:Name="miDelete" Header="Delete file" Click="miDelete_Click" Height="30"/>
-                                            <MenuItem x:Name="miResetIcon" Header="Reset icon" Click="miResetIcon_Click" Height="30"/>
+                                        <MenuItem x:Name="miDelete" Header="Datei Löschen" Click="miDelete_Click" Height="30"/>
+                                            <MenuItem x:Name="miResetIcon" Header="Icon zurücksetzen" Click="miResetIcon_Click" Height="30"/>
                                         </ContextMenu>
                                 </StackPanel.ContextMenu>
                                 
@@ -63,9 +63,9 @@
 
                 <RichTextBox.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Cut" Command="ApplicationCommands.Cut"/>
-                        <MenuItem Header="Copy" Command="ApplicationCommands.Copy"/>
-                        <MenuItem Header="Paste" Command="ApplicationCommands.Paste"/>
+                        <MenuItem Header="Ausschneiden" Command="ApplicationCommands.Cut"/>
+                        <MenuItem Header="Kopieren" Command="ApplicationCommands.Copy"/>
+                        <MenuItem Header="Einfügen" Command="ApplicationCommands.Paste"/>
                     </ContextMenu>
                 </RichTextBox.ContextMenu>
                 
